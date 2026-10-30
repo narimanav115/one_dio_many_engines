@@ -1,0 +1,18 @@
+.dart_tool/
+.packages
+build/
+pubspec.lock
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Claude Code
+.claude/
+.remember/
+CLAUDE.md
+CLAUDE.local.md
+
+# FVM
+.fvm/
+.fvmrc

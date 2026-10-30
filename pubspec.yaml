@@ -1,0 +1,26 @@
+name: one_dio_many_engines
+description: One Dio instance with a platform-specific HTTP engine, plus a MessagePack + Brotli hub protocol for SignalR.
+version: 0.1.0
+publish_to: none
+repository: https://github.com/narimanav115/one_dio_many_engines
+
+environment:
+  sdk: ^3.13.0
+  flutter: ">=3.47.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # 0.6.0 fails to decode some payloads: https://github.com/tiagohm/brotli/issues/5
+  brotli: 0.5.0
+  cronet_http: ^1.9.0
+  cupertino_http: ^3.0.2
+  dio: ^5.11.1
+  dio_compatibility_layer: ^0.1.1
+  dio_http2_adapter: ^2.9.0
+  message_pack_dart: ^2.0.1
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
