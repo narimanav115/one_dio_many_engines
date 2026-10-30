@@ -15,17 +15,14 @@ import 'response_decoder.dart';
 class NetworkClient {
   NetworkClient({
     required String baseUrl,
-    required bool isGmsAvailable,
-    ValueListenable<String?>? proxy,
+    required this._isGmsAvailable,
+    this._proxy,
     List<Interceptor> interceptors = const [],
     Duration timeout = const Duration(seconds: 20),
-    AppleSessionOptions apple = const AppleSessionOptions(),
+    this._apple = const AppleSessionOptions(),
     @visibleForTesting TargetPlatform? platform,
     @visibleForTesting bool? isWeb,
-  }) : _isGmsAvailable = isGmsAvailable,
-       _proxy = proxy,
-       _timeout = timeout,
-       _apple = apple,
+  }) : _timeout = timeout,
        _platform = platform ?? defaultTargetPlatform,
        _isWeb = isWeb ?? kIsWeb,
        dio = Dio(

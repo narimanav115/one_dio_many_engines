@@ -21,8 +21,7 @@ List<int> _brotliDecode(List<int> bytes) => brotli.decode(bytes);
 /// Messages written by the client are never compressed (`isCompressed = 0`):
 /// the large payloads go from server to client.
 final class MessagePackBrotliProtocol {
-  const MessagePackBrotliProtocol({Decompress decompress = _brotliDecode})
-    : _decompress = decompress;
+  const MessagePackBrotliProtocol({this._decompress = _brotliDecode});
 
   static const name = 'messagepack+brotli';
   static const version = 2;
